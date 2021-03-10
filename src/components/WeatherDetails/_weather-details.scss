@@ -1,0 +1,94 @@
+.weather-card {
+  align-items: center;
+  background-color: unset;
+  box-shadow: unset;
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+
+  article p {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-top: 1rem;
+    text-align: justify;
+  }
+
+  svg {
+    font-size: 15rem;
+  }
+}
+
+.weather-information {
+  align-items: center;
+  background-color: $gold-web-golden;
+  border-radius: 30px;
+  box-shadow: 8px 8px 0px 0 #3b320c2e;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  width: 80%;
+}
+
+.weather-subdetails {
+  background-color: #f6f6f64d;
+  border-radius: 30px;
+  padding: 0rem 2rem 1rem 2rem;
+  text-align: center;
+}
+
+.weather-weekly-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.weather-weekly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.weather-city {
+  font-family: "Prompt", sans-serif;
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-top: 3rem;
+}
+
+.weather-today {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Prompt", sans-serif;
+  font-size: 3rem;
+  padding: 2rem;
+
+  h1 {
+    font-family: "Prompt", sans-serif;
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-weight: 100;
+  }
+}
+
+.weather-today-container {
+  align-items: center;
+  display: flex;
+
+  img {
+    box-shadow: 5px 7px 0px 0 #3b320c2e;
+    border-radius: 25px;
+    background-color: #ec9c48;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+}

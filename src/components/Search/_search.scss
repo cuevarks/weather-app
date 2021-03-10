@@ -1,0 +1,90 @@
+.search-card {
+  align-items: center;
+  background-color: $cultured;
+  box-shadow: 5px 7px 0px 0 #3b320c2e;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  width: 100%;
+
+  label {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 95%;
+  }
+
+  svg {
+    align-self: center;
+    border-radius: 25px;
+    height: 100%;
+    width: 1.5rem;
+  }
+}
+.search-card-container {
+  margin-top: 3rem;
+  width: 52%;
+}
+
+#search-query {
+  background-color: $cultured;
+  border: none;
+  border-radius: 25px;
+  color: rgba(0, 0, 0, 0.87);
+  padding-left: 25px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-submit {
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 3.5rem;
+
+  svg,
+  path {
+    cursor: unset;
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    background-color: $cultured;
+    color: $roman-silver;
+    cursor: unset;
+  }
+
+  &:hover {
+    background-color: lighten($color: $roman-silver, $amount: 35);
+  }
+}
+
+.search-suggestions {
+  background-color: #f6f6f6;
+  box-shadow: 5px 7px 0px 0 #3b320c2e;
+  display: none;
+  flex-direction: column;
+  margin-left: 2%;
+  margin-top: 1.5px;
+  width: 47%;
+
+  &.active {
+    display: flex;
+    position: absolute;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 1rem;
+
+    &:hover {
+      background-color: darken($color: $cultured, $amount: 5);
+    }
+  }
+}
