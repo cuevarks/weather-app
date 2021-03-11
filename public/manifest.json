@@ -19,7 +19,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/splash_icon.jpg",
+      "src": "/splash_icon.png",
       "sizes": "512x512",
       "type": "image/jpg"
     }
