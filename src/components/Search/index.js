@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaSearchLocation } from "react-icons/fa";
 import { Card } from "../index";
+import GlobalContext from "../../contexts/GlobalContext/index";
 
 const countryData = require("i18n-iso-countries");
 countryData.registerLocale(require("i18n-iso-countries/langs/en.json"));
@@ -12,6 +13,10 @@ export const Search = () => {
   const [query, setQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const {
+    dispatches,
+    state: { initialLoad },
+  } = useContext(GlobalContext);
 
   const handleSearchQuery = (e) => {
     const { value } = e.target;
@@ -20,7 +25,14 @@ export const Search = () => {
     setIsCorrect(false);
   };
 
-  const handleSubmit = () => {};
+  const handleEnter = (e) => {
+    e.key === "Enter" && isCorrect && handleSubmit();
+  };
+
+  const handleSubmit = () => {
+    isCorrect && dispatches.fetchWeather(query);
+    initialLoad && dispatches.unsetInitial();
+  };
 
   const handleSuggestion = (e) => {
     handleSearchQuery(e);
@@ -35,11 +47,17 @@ export const Search = () => {
           <input
             id="search-query"
             onChange={handleSearchQuery}
+            onKeyDown={handleEnter}
             type="text"
             value={query}
           />
         </label>
-        <button className="search-submit" disabled={!isCorrect}>
+        <button
+          aria-label="Search"
+          className="search-submit"
+          disabled={!isCorrect}
+          onClick={handleSubmit}
+        >
           <FaSearchLocation />
         </button>
       </Card>

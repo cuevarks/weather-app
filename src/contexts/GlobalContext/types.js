@@ -1,0 +1,2 @@
+export const INITIAL_LOAD = "INITIAL_LOAD";
+export const WEATHER_DETAILS = "WEATHER_DETAILS";
